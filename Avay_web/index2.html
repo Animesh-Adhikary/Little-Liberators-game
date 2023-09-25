@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Liberators-Video Gallery</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="icon" href="./images/ico.png">
+</head>
+<body>
+    <div class="container">
+
+        <div class="video-container">
+            <div class="video"> <video controls><source src="./video/video-1.mp4" type="video/mp4"></video></div>
+            <div class="video"> <video controls><source src="./video/video-2.mp4" type="video/mp4"></video></div>
+            <div class="video"> <video controls><source src="./video/video-3.mp4" type="video/mp4"></video></div>
+            <div class="video"> <video controls><source src="./video/video-4.mp4" type="video/mp4"></video></div>
+            <div class="video"> <video controls><source src="./video/video-5.mp4" type="video/mp4"></video></div>
+            <div class="video"> <video controls><source src="./video/video-6.mp4" type="video/mp4"></video></div>
+        </div>
+
+        <div class="popup-video">
+            <span>&times;</span>
+            <video src="video/video-1.mp4" muted autoplay ></video>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.video-container video').forEach(vid =>{
+            vid.onclick = () =>{
+                document.querySelector('.popup-video').style.display = 'block';
+                document.querySelector('.popup-video video').scr = vid.getAttribute('src');
+            }
+        });
+
+        document.querySelector('.popup-video span').onclick = () => {
+            document.querySelector('.popup-video').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
